@@ -1,9 +1,21 @@
 public class ObjectLab {
     public static void main(String[] args) {
-        // 1. Create rex (Rex, 3) and mia (Mia). Print names and ages.
-        // 2. Alias: Pet copy = rex; copy.birthday(); print both ages.
-        // 3. A separate Pet twin with the same values. Print its age.
-        // 4. copy = null; then try copy.getName().
+        Pet rex = new Pet("Rex", 3);
+        Pet mia = new Pet("Mia");
+        System.out.println(rex.getName() + " age: " + rex.getAge());
+        System.out.println(mia.getName() + " age: " + mia.getAge());
+
+        Pet copy = rex;
+        copy.birthday();
+        System.out.println("rex age after birthday: " + rex.getAge());
+        System.out.println("copy age after birthday: " + copy.getAge());
+
+        Pet twin = new Pet("Rex", 3);
+        System.out.println("twin age: " + twin.getAge());
+
+        copy = null;
+        System.out.println("rex name: " + rex.getName());
+        System.out.println(copy.getName());
     }
 }
 
