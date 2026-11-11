@@ -20,6 +20,9 @@ System.out.println(a.getAge() + " " + b.getAge());
 Picture:
 
 Output:
+```java
+4 3
+```
 
 ## Snippet 2
 ```java
@@ -31,6 +34,9 @@ System.out.println(b.getAge());
 Picture:
 
 Output:
+```java
+4
+```
 
 ## Snippet 3
 ```java
@@ -43,6 +49,9 @@ System.out.println(a.getAge() + " " + b.getName());
 Picture:
 
 Output:
+```java
+2 Mia
+```
 
 ## Snippet 4
 ```java
@@ -54,6 +63,9 @@ System.out.println(s + " " + t);
 Picture:
 
 Output:
+```java
+Java! Java
+```
 
 ## Snippet 5
 ```java
@@ -65,6 +77,9 @@ System.out.println(x + " " + y);
 Picture:
 
 Output:
+```java
+5 6
+```
 
 ## Snippet 6
 ```java
@@ -76,6 +91,9 @@ System.out.println(b.getName());
 Picture:
 
 Output:
+```java
+Rex
+```
 
 ## Snippet 7 (this one crashes)
 ```java
@@ -85,19 +103,30 @@ a = null;
 b = null;
 System.out.println(a.getName());
 ```
-- Exception name:
-- Line that crashes:
-- Which variable is null?
+- Exception name: `NullPointerException`
+- Line that crashes: the `println` line
+- Which variable is null? `a`
 - Your fix (one line of code):
+```java
+a = new Pet("Rex", 3);
+```
 
 ## Snippet 8: write your own
 Write a snippet where two variables alias one `Pet`, then explain its output in two sentences.
 
 ```java
-// your snippet here
+Pet a = new Pet("Luna", 2);
+Pet b = a;
+b.birthday();
+System.out.println(a.getAge() + " " + b.getAge());
 ```
 
-Explanation:
+Output:
+```java
+3 3
+```
+
+Explanation: `a` and `b` point to the same `Pet` object, so calling `birthday()` on `b` changes the shared object. Both variables then read the same updated age, which is why the output is `3 3`.
 
 ## Checked my predictions
 Which snippets did I get wrong, and what was I assuming?
